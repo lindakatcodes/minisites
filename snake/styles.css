@@ -1,0 +1,39 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.gameUi {
+  display: flex;
+  justify-content: space-around;
+}
+
+.canvasWrap {
+  margin: 0 auto;
+  position: relative;
+}
+
+.pageTitle {
+  text-align: center;
+  width: 100vw;
+}
+
+canvas {
+  border: 5px solid darkorchid;
+  border-radius: 10px;
+  width: 400px;
+  height: 500px;
+  position: absolute;
+}
+
+#snake-body {
+  z-index: 1;
+}
+
+#food {
+  z-index: 2;
+}
