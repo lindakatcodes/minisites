@@ -130,13 +130,19 @@ function move({ key }) {
 
   // is this move already in our current snake, or the edge of the screen? then game over
   if (headX <= 0 || headX >= snakeX || headY <= 0 || headY >= snakeY) {
-    gameStatusUi.innerHTML = 'Game over! Out of bounds.';
+    gameStatusUi.innerHTML = `
+    Game over! <br>
+    Out of bounds.
+    `;
     endGame();
     return;
   }
 
   if (body.find(point => point.x === headX && point.y === headY)) {
-    gameStatusUi.innerHTML = 'Game over! Hit body.';
+    gameStatusUi.innerHTML = `
+    Game over! <br>
+    Hit your body.
+    `;
     endGame();
     return;
   }
@@ -149,7 +155,10 @@ function move({ key }) {
       hue += RM_SIZE;
       snakeCtx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
       getNewFoodPoint();
-      scoreUi.innerHTML = `Score: ${score}`;
+      scoreUi.innerHTML = `
+      Score:<br>
+      <span class="num">${score}</span>
+       `;
     }
   }
 
@@ -176,7 +185,6 @@ function drawMoves(body) {
 
 // watch for arrow key presses, and send those to the move function if game is active
 function handleKey(e) {
-  console.log('firing key handler');
   if (e.key.includes('Arrow')) {
     // prevent the default, which is moving the screen
     e.preventDefault();
@@ -189,12 +197,21 @@ function handleKey(e) {
 // ensure starting values are all reset, set gameActive to true, and allow gameplay
 function startGame() {
   console.log('here we go!');
+  // clear the screen from the previous game
+   snakeCtx.clearRect(0, 0, snakeX, snakeY);
+  foodCtx.clearRect(0, 0, foodX, foodY);
+  
+  // reset needed values for ui
   gameActive = true;
   score = 0;
-  scoreUi.innerHTML = `Score: ${score}`;
+  scoreUi.innerHTML = `
+  Score:<br>
+  <span class="num">${score}</span>
+  `;
   gameStatusUi.innerHTML = '';
   startButton.setAttribute('disabled', true);
   startButton.innerText = 'Game in Progress';
+  startButton.classList.add('disabled');
 
   // get new values for food and snake variables
   getBoardReady();
@@ -214,9 +231,9 @@ function endGame() {
   gameActive = false;
   startButton.removeAttribute('disabled');
   startButton.innerText = 'Start New Game';
-  snakeCtx.clearRect(0, 0, snakeX, snakeY);
-  foodCtx.clearRect(0, 0, foodX, foodY);
+  startButton.classList.remove('disabled');
   body = [];
+  snakeLength = 5;
 }
 
 // set listener for start button, should trigger the game to start

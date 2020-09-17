@@ -7,19 +7,53 @@ html {
   box-sizing: border-box;
 }
 
-.gameUi {
-  display: flex;
-  justify-content: space-around;
-}
-
-.canvasWrap {
-  margin: 0 auto;
-  position: relative;
+body {
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
 .pageTitle {
   text-align: center;
   width: 100vw;
+}
+
+.gameUi {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.num {
+  font-weight: bold;
+  color: darkorchid;
+}
+
+.start {
+  padding: 3% 1.5%;
+  align-self: center;
+  background:#2e86c1;
+  color: white;
+}
+
+.disabled {
+  background: darkgray;
+}
+
+.guide {
+  width: 400px;
+  font-size: 1.1rem;
+  margin-bottom: 1%;
+}
+
+.canvasWrap {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 canvas {
@@ -31,9 +65,9 @@ canvas {
 }
 
 #snake-body {
-  z-index: 2;
+  z-index: 1;
 }
 
 #food {
-  z-index: 1;
+  z-index: 2;
 }
