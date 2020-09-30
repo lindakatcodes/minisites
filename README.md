@@ -22,3 +22,17 @@ There were definitely some struggles, and this isn't exactly the same as the ori
 **Link to Site** - <https://snake-mini.netlify.app>
 
 ----
+
+## Color Switcher
+
+A simple color switching app built with React! Created following [Ali Spittel's intro to React live stream](https://www.youtube.com/watch?v=NUmaTY46mYs).
+
+Then I added the ability to get a random color!
+
+**Tech**
+
+- React
+
+**Works on** - Desktop, Mobile
+
+**Link to Site** - <https://react-color-switcher.netlify.app>
