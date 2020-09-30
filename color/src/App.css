@@ -1,0 +1,53 @@
+html, body, #root, .react-root {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.centered {
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid white;
+  color: white;
+  font-size: 20px;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.green {
+  background-color: green;
+}
+
+.random {
+  background-color: #333;
+  color: white;
+}
